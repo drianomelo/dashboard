@@ -2064,23 +2064,21 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 var toggleButtonMenu = document.getElementById("menu");
 var aside = document.querySelector("aside");
 var asideItems = document.querySelectorAll('.item p');
-var asideName = document.querySelector('.name');
+var asideName = document.querySelectorAll('.name');
 toggleButtonMenu.addEventListener('click', function () {
   aside.classList.toggle('w-52');
   aside.classList.toggle('w-[75px]');
   asideItems.forEach(function (item) {
     item.classList.toggle('opacity-0');
   });
-  var shortName = createShortName(asideName);
-  asideName.classList.toggle("hidden");
-  shortName.classList.toggle("block");
+  asideName.forEach(function (name) {
+    var fullName = name.textContent;
+    var shortName = name.nextElementSibling;
+    shortName.innerHTML = fullName[0] + fullName[1];
+    name.classList.toggle('hidden');
+    shortName.classList.toggle('hidden');
+  });
 });
-function createShortName(name) {
-  var shortName = document.createElement("h2");
-  var fullName = name.textContent;
-  shortName = "".concat(fullName[0] + fullName[1] + fullName[2]);
-  return shortName;
-}
 
 /***/ }),
 

@@ -15,13 +15,15 @@
 </head>
 
 <body class="w-full h-screen font-oxygen">
-    <div class="w-full h-full flex">
+    <div class="flex w-full h-full">
         <aside class="w-52 h-full bg-[#1F263E] flex flex-col transition-all">
-            <div class="px-6 py-4 flex flex-col items-center">
-                <h1
-                    class="w-full text-white text-center font-light text-base uppercase tracking-[.3rem] border-b border-[#303750] pb-2.5">
-                    Dashboard</h1>
-                <h2 class="name text-[#50B8E4] font-bold uppercase pt-2.5 text-lg">Adriano Melo</h2>
+            <div class="flex flex-col items-center px-6 py-4">
+                <span
+                    class="name w-full text-white text-center font-light text-base uppercase tracking-[.3rem] border-b border-[#303750] pb-2.5">Dashboard</span>
+                <span
+                    class="shortName w-full hidden text-white text-center font-light text-base uppercase tracking-[.3rem] border-b border-[#303750] pb-2.5"></span>
+                <span class="name text-[#50B8E4] font-bold uppercase pt-2.5 text-lg transition-all duration-300">Adriano Melo</span>
+                <span class="shortName text-[#50B8E4] font-bold uppercase pt-2.5 text-lg hidden transition-all duration-300"></span>
             </div>
             <nav class="flex-1">
                 <ul>
@@ -47,9 +49,8 @@
             </nav>
             <div>
                 <a href="#"
-                    class="item text-zinc-400 flex items-center gap-4 px-6 py-3 border-l-4 border-l-transparent transition-all duration-300
-                                hover:text-red-500 hover:bg-red-950 hover:border-l-red-500">
-                    <i class="fa-solid text-lg fa-power-off"></i>
+                    class="flex items-center gap-4 px-6 py-3 transition-all duration-300 border-l-4 item text-zinc-400 border-l-transparent hover:text-red-500 hover:bg-red-950 hover:border-l-red-500">
+                    <i class="text-lg fa-solid fa-power-off"></i>
                     <p>Sair</p>
                 </a>
             </div>

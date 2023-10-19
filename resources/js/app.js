@@ -3,8 +3,7 @@ require('./bootstrap');
 const toggleButtonMenu = document.getElementById("menu");
 const aside = document.querySelector("aside");
 const asideItems = document.querySelectorAll('.item p');
-const asideName = document.querySelector('.name');
-
+const asideName = document.querySelectorAll('.name');
 
 toggleButtonMenu.addEventListener('click', () => {
     aside.classList.toggle('w-52');
@@ -12,15 +11,14 @@ toggleButtonMenu.addEventListener('click', () => {
     asideItems.forEach(item => {
         item.classList.toggle('opacity-0');
     })
-    const shortName = createShortName(asideName);
-    asideName.classList.toggle("hidden");
-    shortName.classList.toggle("block");
+    asideName.forEach(name => {
+        let fullName = name.textContent;
+        let shortName = name.nextElementSibling;
+        shortName.innerHTML = fullName[0] + fullName[1];
+        name.classList.toggle('hidden');
+        shortName.classList.toggle('hidden');
+    })
+
 })
 
-function createShortName(name) {
-    let shortName = document.createElement("h2");
-    const fullName = name.textContent;
-    shortName = `${fullName[0] + fullName[1] + fullName[2]}`;
 
-    return shortName;
-}
